@@ -105,8 +105,8 @@ export default {
       }
     },
     async addFriend(email) {
-      let a = this.filteredUsers[0].subscriptions.push(email)
-      await axios.put("https://6286235096bccbf32d6fe5bf.mockapi.io/users/" + this.filteredUsers[0].id, a)
+      this.filteredUsers[0].subscriptions.push(email)
+      await axios.put("https://6286235096bccbf32d6fe5bf.mockapi.io/users/" + parseInt(this.filteredUsers[0].id), this.filteredUsers[0])
     }
   },
   async mounted() {
