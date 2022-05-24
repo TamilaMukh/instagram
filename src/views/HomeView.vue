@@ -107,6 +107,7 @@ export default {
     async addFriend(email) {
       this.filteredUsers[0].subscriptions.push(email)
       await axios.put("https://6286235096bccbf32d6fe5bf.mockapi.io/users/" + parseInt(this.filteredUsers[0].id), this.filteredUsers[0])
+      this.$router.go()
     }
   },
   async mounted() {
